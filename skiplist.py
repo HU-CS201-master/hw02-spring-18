@@ -1,78 +1,80 @@
-import pdb
 import random
 
-class SkipNode:
+class Skipnode:
     def __init__(self, data, height):
-        self.data = data
-        height += 1
-        self.front = [None] * height
-
+        '''Initializes node with data and (height+1) front pointers.
+        '''
+        pass
+    
     def __str__(self):
-        front_s = []
-        for f in self.front:
-            if f:
-                front_s.append('{}'.format(f.data))
-            else:
-                front_s.append('/')
-        s = '{}, [{}]'.format(self.data, ', '.join(front_s))
-        return s
-
+        '''Returns a string representation of an object for printing.
+        '''
+        pass
+    
     def __repr__(self):
+        '''Returns a string representation of an object for interactive
+        mode.
+        '''
         return self.__str__()
     
     def height(self):
-        return len(self.front)-1
+        '''Returns the height of this node.
+        '''
+        pass
 
     def add_levels(self, n):
-        self.front.extend([None]*n)
+        '''Adds n front pointers.
+        '''
+        pass
 
-class SkipList:
+class Skiplist:
     def __init__(self, limit=100):
-        self.sentinel = SkipNode(None, 0)
-        self.limit = limit
-
+        '''Initializes sentinel, height limit, and size.
+        '''
+        pass
+        
     def __str__(self):
-        lst = []
-        node = self.sentinel.front[0]
-        while node:
-            lst.append('{}'.format(node))
-            node = node.front[0]
-        return '-> '.join(lst)
+        '''Returns a string representation of an object for printing.
+        '''
+        pass
     
     def __repr__(self):
+        '''Returns a string representation of an object for interactive
+        mode.
+        '''
         return self.__str__()
         
     def height(self):
-        return self.sentinel.height()
+        '''Returns the height of the skiplist.
+        '''
+        pass
         
     def find_predecessor(self, x):
-        pdb.set_trace()
-        node = self.sentinel
-        h = self.sentinel.height()
-        stack = [None] * (h+1)
-        while h >= 0:
-            front = node.front[h]
-            while front and front.data < x:
-                node = front
-                front = node.front[h]
-            stack[h] = node
-            h -= 1
-        return (node, stack)
-
+        '''Returns (predecessor_node, stack).
+        '''
+        pass
+    
     def find(self, x):
-        pred, _ = find_predecessor(x)
-        return pred.front[0].data
+        '''Returns x, its successor, or None, in that order.
+        '''
+        pass
     
     def add(self, x):
-        # pdb.set_trace()
-        add_me = SkipNode(x, random.randint(0,self.limit))
-        added_h = add_me.height()
-        if added_h > self.height():
-            self.sentinel.add_levels(added_h-self.height())
-        pred, stack = self.find_predecessor(x)
-        if pred.front[0] and pred.front[0].data == x:
-            return False
-        for i in range(added_h+1):
-            add_me.front[i] = stack[i].front[i]
-            stack[i].front[i] = add_me
-        return True
+        '''Adds x to the skiplist and returns True; does not add and
+        returns False if x is already an element.
+        '''
+        pass
+    
+    def remove(self, x):
+        '''Remoces x from the skiplist and returns True; does not remove
+        and returns False if x is not an element.
+        '''
+        pass
+    
+    def truncate(self, i):
+        # As described in Exercise 4.11
+        pass
+
+    def absorb(self, l2):
+        # As described in Exercise 4.12
+        pass

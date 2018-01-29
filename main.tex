@@ -1,0 +1,90 @@
+\documentclass[addpoints]{exam}
+
+\usepackage{hyperref}
+
+% Header and footer.
+\pagestyle{headandfoot}
+\runningheadrule
+\runningfootrule
+\runningheader{CS 201 DS II}{Homework 2}{Spring 2018}
+\runningfooter{}{Page \thepage\ of \numpages}{}
+\firstpageheader{}{}{}
+
+\qformat{{\large\bf Exercise \thequestiontitle}\hfill[\totalpoints\ points]}
+\boxedpoints
+\printanswers
+
+\title{Habib University\\CS 201 Data Structures II\\Spring 2018}
+\author{Don't Grade Me}  % replace with your ID, e.g. sh01703
+\date{Homework 2\\Due: 19h; Monday, 12 Feb}
+
+\begin{document}
+\maketitle
+
+\begin{questions}
+
+  \titledquestion{4.8*}[10]
+  The {\tt find(x)} method in a SkiplistSet sometimes performs redundant comparisons; these occur when $x$ is compared to the same value more than once. They can occur when, for some node, {\tt u}, {\tt u.next[r] = u.next[r−1]}. Show how these redundant comparisons happen and explain how {\tt find(x)} can be modified so that they are avoided.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{4.9*}[5]
+Explain how we can implement a version of a skiplist that implements the SSet interface, but also allows fast access to elements by rank. That is, it also supports the function $get(i)$, which returns the element whose rank is $i$ in $O(\log n)$ expected time. (The rank of an element $x$ in an SSet is the number of elements in the SSet that are less than $x$.)
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{4.14* (challenge)}[0]
+Using an {\tt SSet} as your underlying structure, design an application that reads a (large) text file and allows you to search, interactively, for any substring contained in the text. As the user types their query, a matching part of the text (if any) should appear as a result.
+
+\noindent\underline{Hint 1}: Every substring is a prefix of some suffix, so it suffices to store all suffixes of the text file.
+
+\noindent\underline{Hint 2}: Any suffix can be represented compactly as a single integer indi- cating where the suffix begins in the text.
+
+Test your application on some large texts, such as some of the books available at \href{http://www.gutenberg.org/}{Project Gutenberg}. If done correctly, your application will be very responsive; there should be no noticeable lag between typing keystrokes and seeing the results.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{5.1}[5]
+As in the book.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{5.2}
+\begin{parts}
+  \part[5] As in the book.
+  \begin{solution}
+    % Write your solution here
+  \end{solution}
+
+    \part[5] As in the book.
+  \begin{solution}
+    % Write your solution here
+  \end{solution}
+\end{parts}
+
+\titledquestion{5.5}[10]
+As in the book.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{5.9}[10]
+As in the book.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+
+\titledquestion{5.10}[10]
+As in the book.
+\begin{solution}
+  % Write your solution here
+\end{solution}
+\end{questions}
+
+* - The question has been modified from the one in the book to exclude implementation. ``Design'' in a question here means to write pseudocode.
+
+\end{document}

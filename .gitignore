@@ -1,0 +1,9 @@
+# Autosaves
+*~
+
+# LaTeX
+*.aux
+*.log
+*.out
+*.pdf
+
